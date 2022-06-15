@@ -1,0 +1,24 @@
+const { test } = require("@playwright/test");
+
+test.beforeEach(async ({ page }) => {
+  await page.goto("https://netology.ru/?modal=sign_in");
+  await page.fill(
+    '<input class="" type="email" name="email" placeholder="Email" value="" checked="">',
+    "username"
+  );
+  await page.fill(
+    '<input class="components-common-ModalBox-components-authorization-SignIn--input--257E2" type="password" name="password" placeholder="Пароль" value="" checked="">',
+    "password"
+  );
+  await page.click(
+    '<button class="_-packages-ui-kit-components-v2-Button--button--27Ont _-packages-ui-kit-components-v2-Button--size-m--xwT-S _-packages-ui-kit-components-v2-Button--color-lilac--Ou2Ie components-common-ModalBox-components-authorization-SignIn--button--F9jox" type="submit" data-testid="login-submit-btn">Войти</button>'
+  );
+});
+
+test("first", async ({ page }) => {
+  // page is signed in.
+});
+
+test("second", async ({ page }) => {
+  // page is signed in.
+});
